@@ -22,6 +22,9 @@ public class IndexController {
     @Autowired
     private Guest guest;
 
+    @Autowired
+    private RedisTemplate<String , Object> redisTemplate;
+
     @GetMapping("/")
     public String index (ModelMap modelMap) {
 

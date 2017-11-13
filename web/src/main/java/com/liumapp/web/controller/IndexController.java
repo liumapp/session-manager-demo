@@ -1,6 +1,6 @@
-package com.liumapp.backend.web.controller;
+package com.liumapp.web.controller;
 
-import com.liumapp.backend.web.entity.Guest;
+import com.liumapp.web.entity.Guest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.session.SessionProperties;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -21,9 +21,6 @@ public class IndexController {
 
     @Autowired
     private Guest guest;
-
-    @Autowired
-    private RedisTemplate<String , Object> redisTemplate;
 
     @GetMapping("/")
     public String index (ModelMap modelMap) {

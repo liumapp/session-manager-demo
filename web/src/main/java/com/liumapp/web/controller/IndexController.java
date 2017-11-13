@@ -22,11 +22,22 @@ public class IndexController {
     @Autowired
     private Guest guest;
 
+    @Autowired
+    private RedisTemplate<String , String> redisTemplate;
+
     @GetMapping("/")
     public String index (ModelMap modelMap) {
 
-        guest.setName("jony");
-        guest.setName("boy");
+        guest.setName("marry");
+        guest.setSex("girl");
+
+        String name = redisTemplate.opsForList().leftPop("name");
+        String sex = redisTemplate.opsForList().leftPop("sex");
+        System.out.println("data from redis:");
+        System.out.println("name is : " + name + " and sex is : " + sex );
+
+        redisTemplate.opsForList().leftPush("name",guest.getName());
+        redisTemplate.opsForList().leftPush("sex",guest.getSex());
 
         modelMap.addAttribute("name" , guest.getName());
         modelMap.addAttribute("sex" , guest.getSex());

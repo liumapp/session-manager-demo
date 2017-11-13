@@ -14,6 +14,14 @@ public class Guest {
 
     private String sex;
 
+    public Guest(String name, String sex) {
+        this.name = name;
+        this.sex = sex;
+    }
+
+    public Guest() {
+    }
+
     public String getName() {
         return name;
     }
@@ -28,5 +36,13 @@ public class Guest {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    @Override
+    public String toString() {
+        return "Guest{" +
+                "name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                '}';
     }
 }

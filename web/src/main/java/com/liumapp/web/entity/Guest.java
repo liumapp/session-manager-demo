@@ -1,5 +1,6 @@
 package com.liumapp.web.entity;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
  * home-page:http://www.liumapp.com
  */
 @Component
+@ConfigurationProperties(prefix = "liumapp.guest")
 public class Guest {
 
     private String name;

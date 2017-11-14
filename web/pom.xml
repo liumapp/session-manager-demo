@@ -29,10 +29,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 			<scope>runtime</scope>
@@ -47,8 +43,13 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.liumapp</groupId>
+			<groupId>com.liumapp.session</groupId>
 			<artifactId>session-manager</artifactId>
+			<version>v1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.liumapp.redis</groupId>
+			<artifactId>redis-operator</artifactId>
 			<version>v1.0.0</version>
 		</dependency>
 	</dependencies>

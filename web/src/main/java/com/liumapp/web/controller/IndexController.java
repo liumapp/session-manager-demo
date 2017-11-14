@@ -1,5 +1,6 @@
 package com.liumapp.web.controller;
 
+import com.liumapp.redis.operator.string.StringUtil;
 import com.liumapp.web.entity.Guest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.session.SessionProperties;
@@ -23,27 +24,14 @@ public class IndexController {
     private Guest guest;
 
     @Autowired
-    private RedisTemplate<String , String> redisTemplate;
+    private StringUtil stringUtil;
 
     @GetMapping("/")
     public String index (ModelMap modelMap) {
-
-        guest.setName("marry");
-        guest.setSex("girl");
-
-        String name = redisTemplate.opsForList().leftPop("name");
-        String sex = redisTemplate.opsForList().leftPop("sex");
-        System.out.println("data from redis:");
-        System.out.println("name is : " + name + " and sex is : " + sex );
-
-        redisTemplate.opsForList().leftPush("name",guest.getName());
-        redisTemplate.opsForList().leftPush("sex",guest.getSex());
-
         modelMap.addAttribute("name" , guest.getName());
         modelMap.addAttribute("sex" , guest.getSex());
 
         return "index";
-
     }
 
     @PostMapping("/add")

@@ -20,6 +20,7 @@
 	<modules>
 		<module>session-manager</module>
 		<module>web</module>
+		<module>redis-operator</module>
 	</modules>
 
 </project>

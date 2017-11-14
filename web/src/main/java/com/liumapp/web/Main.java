@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Import;
  * home-page:http://www.liumapp.com
  */
 @SpringBootApplication(scanBasePackages = {"com.liumapp"})
-@Import(com.liumapp.sessionManager.Main.class)
+@Import({com.liumapp.session.manager.Main.class, com.liumapp.redis.operator.Main.class})
 public class Main {
 
     public static void main(String[] args) {
